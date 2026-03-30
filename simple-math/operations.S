@@ -25,12 +25,16 @@ Mul:
 .global Div_q
 Div_q:
 	mov %edi, %eax
-	div %esi, %eax
+	mov %esi, %ecx
+	cdq	# Double the size of the operand ( Word -> DoubleWord | DoubleWord -> QuadWord )
+	div %ecx
 	ret	# return the Quotient
 
 .global Div_r
 Div_r:
 	mov %edi, %eax
-	div %esi, %eax
+	mov %esi, %ecx
+	cdq
+	div %ecx
 	mov %edx, %eax
 	ret	# return the Remainder

@@ -8,7 +8,7 @@ int Div_r(int a, int b);
 
 int main()
 {
-	int result = Div_q(10,20);
+	int result = Div_q(20,30);
 	printf("%d\n",result);
 	return 0;
 }
