@@ -1,0 +1,28 @@
+// This Example uses a feature in intel cpus, which called SSE (Streaming SIMD Extensions), which enables performing SIMD (Single Instruction
+// Multiple Data) on 128bit Data Registers containing 4 Single presicion floating point numbers (32bit for each), which are equivalent to
+// "float" type in C, which speeds up the processing of data
+
+.section .note.GNU-stack,"",@progbits
+.section .text
+
+.global SSE_Add
+SSE_Add:
+	movups (%rdi), %xmm0	# we load the first 128bit content of the array that its address are stored in EDI (first argument)
+	movups (%rsi), %xmm1	# same as the first but with the second argument
+	addps %xmm1, %xmm0	# XMM0 = XMM0 + XMM1  (vector addition)
+	movups %xmm0, (%rdx)	# move the XMM0 content to the memory address stored in EDX (third argument)
+	ret			# return the result (XMM0) as float array (we got output in the third argument)
+
+.global SSE_Sub
+SSE_Sub:
+	nop
+
+
+.global SSE_Mul
+SSE_Mul:
+	nop
+
+
+.global SSE_Div
+SSE_Div:
+	nop
