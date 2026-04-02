@@ -26,7 +26,7 @@ Mul:
 Div_q:
 	mov %edi, %eax
 	mov %esi, %ecx
-	cdq	# Double the size of the operand ( Word -> DoubleWord | DoubleWord -> QuadWord )
+	xor %edx, %edx	# clear the EDX register to prevent result errors
 	div %ecx
 	ret	# return the Quotient
 
@@ -34,7 +34,7 @@ Div_q:
 Div_r:
 	mov %edi, %eax
 	mov %esi, %ecx
-	cdq
+	xor %edx, %edx
 	div %ecx
 	mov %edx, %eax
 	ret	# return the Remainder
