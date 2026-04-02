@@ -1,6 +1,10 @@
 #include<stdio.h>
 
 void SSE_Add(float *a, float *b, float *c);
+void SSE_Sub(float *a, float *b, float *c);
+void SSE_Mul(float *a, float *b, float *c);
+void SSE_Div(float *a, float *b, float *c);
+
 
 int main()
 {

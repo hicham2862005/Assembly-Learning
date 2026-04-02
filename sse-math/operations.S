@@ -13,16 +13,29 @@ SSE_Add:
 	movups %xmm0, (%rdx)	# move the XMM0 content to the memory address stored in EDX (third argument)
 	ret			# return the result (XMM0) as float array (we got output in the third argument)
 
+
 .global SSE_Sub
 SSE_Sub:
-	nop
+	movups (%rdi), %xmm0
+	movups (%rsi), %xmm1
+	subps %xmm1, %xmm0	# XMM0 = XMM0 - XMM1
+	movups %xmm0, (%rdx)
+	ret
 
 
 .global SSE_Mul
 SSE_Mul:
-	nop
+	movups (%rdi), %xmm0
+	movups (%rsi), %xmm1
+	mulps %xmm1, %xmm0	# XMM0 = XMM0 * XMM1
+	movups %xmm0, (%rdx)
+	ret
 
 
 .global SSE_Div
 SSE_Div:
-	nop
+	movups (%rdi), %xmm0
+	movups (%rsi), %xmm1
+	divps %xmm1, %xmm0	# XMM0 = XMM0 / XMM1
+	movups %xmm0, (%rdx)
+	ret
