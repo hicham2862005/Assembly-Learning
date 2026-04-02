@@ -5,6 +5,9 @@
 .section .note.GNU-stack,"",@progbits
 .section .text
 
+// NOTE: this code done below, gonna work only in 64bit hardware due to its use of RDI, RSI, RDX registers to store the 64bit memory addresses
+// in case if you want to use it with 32bit machine, change the RDI, RSI, RDX to EDI, ESI, EDX respectively
+
 .global SSE_Add
 SSE_Add:
 	movups (%rdi), %xmm0	# we load the first 128bit content of the array that its address are stored in EDI (first argument)
