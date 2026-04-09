@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-// basically at the assembly level we dont care about the type of data at the source/dest so we made the generic type to accept any thing
+// basically at the assembly level we dont care about the type of data at the source/dest so we made them in a generic type to accept any thing
 void move(void *dest, void *src, int lenght);
 
 int main()

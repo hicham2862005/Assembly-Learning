@@ -9,4 +9,4 @@
 .global move
 move:
 	mov %edx, %ecx	# mov the length, which is the 3rd argument to the ECX register, to be used as a counter
-	rep movsb	# mov one byte from the address at the ESI to the address at the EDI
+	rep movsb	# mov one byte from the address at the ESI to the address at the EDI for an ECX times
