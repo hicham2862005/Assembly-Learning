@@ -1,5 +1,8 @@
 #include<stdio.h>
 
+// TODO: Add other function for EAX ECX input
+// TODO: Add Enum for the FeatureIDs and some function for Outputing the output array in human readable way
+
 void GetFeature1(int FeatureID, int *output);
 
 int main()
