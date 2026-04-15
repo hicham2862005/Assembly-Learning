@@ -3,10 +3,9 @@
 .section .note.GNU-stack,"",@progbits
 .section .text
 
-// this function uses the EAX only to request the CPU feature
-// GetFeature1(featureId, *output);
-.global GetFeature1
-GetFeature1:
+// GetFeature(featureId, *output);
+.global GetFeature
+GetFeature:
 	mov %edi, %eax		# load featureId into EAX register
 	cpuid
 	mov %eax, (%rsi)	# load EAX to the first part of the output array
