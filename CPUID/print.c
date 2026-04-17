@@ -30,7 +30,7 @@ void GetFeature(uint16_t FeatureID, uint32_t *output);
         u32 full;
 	};
 
-from the "Linux Kernel" : "/arch/x86/common.h"
+from the "Linux Kernel" : "/arch/x86/kvm/vmx/common.h"
 */
 
 // this enum contians the FeatureID of each feature
