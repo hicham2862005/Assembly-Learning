@@ -4,6 +4,35 @@
 // this function are used to extract the CPUID Feature and display it in it's raw form
 void GetFeature(uint16_t FeatureID, uint32_t *output);
 
+/*
+ note: you could use something like this (example) for extracting each region of the CPUID output
+
+	union vmx_exit_reason {
+        struct {
+                u32     basic                   : 16;
+                u32     reserved16              : 1;
+                u32     reserved17              : 1;
+                u32     reserved18              : 1;
+                u32     reserved19              : 1;
+                u32     reserved20              : 1;
+                u32     reserved21              : 1;
+                u32     reserved22              : 1;
+                u32     reserved23              : 1;
+                u32     reserved24              : 1;
+                u32     reserved25              : 1;
+                u32     bus_lock_detected       : 1;
+                u32     enclave_mode            : 1;
+                u32     smi_pending_mtf         : 1;
+                u32     smi_from_vmx_root       : 1;
+                u32     reserved30              : 1;
+                u32     failed_vmentry          : 1;
+        };
+        u32 full;
+	};
+
+from the "Linux Kernel" : "/arch/x86/common.h"
+*/
+
 // this enum contians the FeatureID of each feature
 typedef enum {
 	BASIC_CPUID_INFORMATION_0 = 0,	// 00H
