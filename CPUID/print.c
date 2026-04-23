@@ -33,6 +33,16 @@ void GetFeature(uint16_t FeatureID, uint32_t *output);
 from the "Linux Kernel" : "/arch/x86/kvm/vmx/common.h"
 */
 
+typedef union {
+	struct Raw {
+		uint32_t EAX;
+		uint32_t EBX;
+		uint32_t ECX;
+		uint32_t EDX;
+	};
+} CPUID_Decode;
+
+
 // this enum contians the FeatureID of each feature
 typedef enum {
 	BASIC_CPUID_INFORMATION_0 = 0,	// 00H
