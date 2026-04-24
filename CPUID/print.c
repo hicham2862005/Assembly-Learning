@@ -12,6 +12,35 @@ typedef union {
 		uint32_t ECX;
 		uint32_t EDX;
 	};
+	struct Basic_CPUID_Information {
+		uint32_t Max_leaf;
+		char Vendor_ID_1[4];
+		char Vendor_ID_2[4];
+		char Vendor_ID_3[4];
+	};
+	struct  Version_And_Features {
+		// EAX
+		uint32_t Stepping_ID		: 4;
+		uint32_t Model_ID		: 4;
+		uint32_t Family_ID		: 4;
+		uint32_t Processor_Type		: 2;
+		uint32_t Reserved_1		: 2;
+		uint32_t Extended_Model_ID	: 4;
+		uint32_t Extended_Family_ID	: 8;
+		uint32_t Reserved_2		: 4;
+		// EBX
+		uint32_t Brand_Index		: 8;
+		uint32_t CLFLUSH_Line_Size	: 8;
+		uint32_t APIC_ID_Space		: 8;
+		uint32_t Initial_APIC_ID	: 8;
+		// ECX
+		uint32_t SSE3			: 1;
+		uint32_t PCLMULQDQ		: 1;
+		uint32_t DTES64			: 1;
+		uint32_t MONITOR		: 1;
+		uint32_t DS_CPL			: 1;
+		uint32_t VMX			: 1;
+	}
 } CPUID_Decode;
 
 
