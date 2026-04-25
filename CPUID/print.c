@@ -6,19 +6,19 @@ void GetFeature(uint16_t FeatureID, uint32_t *output);
 
 // the Decoder Sturcture for extracting the features in a more clean way
 typedef union {
-	struct Raw {
+	struct {
 		uint32_t EAX;
 		uint32_t EBX;
 		uint32_t ECX;
 		uint32_t EDX;
-	};
-	struct Basic_CPUID_Information {
+	} Raw;
+	struct {
 		uint32_t Max_leaf;
 		char Vendor_ID_1[4];
 		char Vendor_ID_2[4];
 		char Vendor_ID_3[4];
-	};
-	struct  Version_And_Features {
+	} Basic_CPUID_Information;
+	struct {
 		// EAX
 		uint32_t Stepping_ID		: 4;
 		uint32_t Model_ID		: 4;
@@ -40,7 +40,7 @@ typedef union {
 		uint32_t MONITOR		: 1;
 		uint32_t DS_CPL			: 1;
 		uint32_t VMX			: 1;
-	}
+	} Version_And_Features;
 } CPUID_Decode;
 
 
@@ -103,7 +103,13 @@ void DescribeFeature(Features FeatureID)
 	GetFeature(FeatureID, output);
 	switch(FeatureID)
 	{
-		case RESERVED_1 | RESERVED_2 | RESERVED_3 | RESERVED_4 | RESERVED_5 | RESERVED_6 | RESERVED_7:
+		case RESERVED_1:
+		case RESERVED_2:
+		case RESERVED_3:
+		case RESERVED_4:
+		case RESERVED_5:
+		case RESERVED_6:
+		case RESERVED_7:
 			printf("Reserved Feature ID\n");
 			break;
 		case UNIMPLEMENTED:
