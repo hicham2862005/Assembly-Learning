@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdint.h>	// for uint8_t and uint16_t type
+#include<stdint.h>	// for uint8_t, uint16_t and the uint32_t types
 
 // this function are used to extract the CPUID Feature and display it in it's raw form
 void GetFeature(uint16_t FeatureID, uint32_t *output);
