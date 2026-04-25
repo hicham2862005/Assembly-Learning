@@ -40,6 +40,32 @@ typedef union {
 		uint32_t MONITOR		: 1;
 		uint32_t DS_CPL			: 1;
 		uint32_t VMX			: 1;
+		uint32_t SMX			: 1;
+		uint32_t EIST			: 1;
+		uint32_t TM2			: 1;
+		uint32_t SSSE3			: 1;
+		uint32_t L1_Context_ID		: 1;			// adaptive mode or shared mode
+		uint32_t Debug_Interface	: 1;
+		uint32_t FMA			: 1;
+		uint32_t CMPXCHG16B		: 1;
+		uint32_t XTRP_Update_Control	: 1;
+		uint32_t Perf_Capabilities	: 1;
+		uint32_t Reserved_3		: 1;
+		uint32_t PCID			: 1;
+		uint32_t DCA			: 1;
+		uint32_t SSE4_1			: 1;
+		uint32_t SSE4_2			: 1;
+		uint32_t X2APIC			: 1;
+		uint32_t MOVBE			: 1;
+		uint32_t POPCNT			: 1;
+		uint32_t TSC_Deadline		: 1;
+		uint32_t AESNI			: 1;
+		uint32_t XSAVE			: 1;
+		uint32_t OSXSAVE		: 1;
+		uint32_t AVX			: 1;
+		uint32_t F16C			: 1;
+		uint32_t RDRAND			: 1;
+		uint32_t Not_Used		: 1;
 	} Version_And_Features;
 } CPUID_Decode;
 
