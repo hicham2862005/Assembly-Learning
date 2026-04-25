@@ -100,6 +100,28 @@ typedef union {
 		uint32_t Reserved_6		: 1;
 		uint32_t PBE			: 1;
 	} Version_And_Features;
+	struct {
+		// EAX
+		uint32_t Reserved_1		: 8;
+		uint32_t Descriptor_1		: 8;
+		uint32_t Descriptor_2		: 8;
+		uint32_t Descriptor_3		: 8;
+		// EBX
+		uint32_t Descriptor_4		: 8;
+		uint32_t Descriptor_5		: 8;
+		uint32_t Descriptor_6		: 8;
+		uint32_t Descriptor_7		: 8;
+		// ECX
+                uint32_t Descriptor_8           : 8;
+                uint32_t Descriptor_9           : 8;
+                uint32_t Descriptor_10          : 8;
+                uint32_t Descriptor_11          : 8;
+		// EDX
+		uint32_t Descriptor_12          : 8;
+                uint32_t Descriptor_13          : 8;
+                uint32_t Descriptor_14          : 8;
+                uint32_t Descriptor_15          : 8;
+	} TLB_Cache_Prefetch_Information;
 } CPUID_Decode;
 
 
