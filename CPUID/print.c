@@ -24,108 +24,139 @@ typedef union {
 	} Basic_CPUID_Information;
 	struct {
 		// EAX
-		uint32_t Stepping_ID		: 4,
-			 Model_ID		: 4,
-			 Family_ID		: 4,
-			 Processor_Type		: 2,
-			 Reserved_1		: 2,
-			 Extended_Model_ID	: 4,
-			 Extended_Family_ID	: 8,
-			 Reserved_2		: 4;
+		uint32_t Stepping_ID			: 4,
+			 Model_ID			: 4,
+			 Family_ID			: 4,
+			 Processor_Type			: 2,
+			 Reserved_1			: 2,
+			 Extended_Model_ID		: 4,
+			 Extended_Family_ID		: 8,
+			 Reserved_2			: 4;
 		// EBX
-		uint32_t Brand_Index		: 8,
-			 CLFLUSH_Line_Size	: 8,
-			 APIC_ID_Space		: 8,
-			 Initial_APIC_ID	: 8;
+		uint32_t Brand_Index			: 8,
+			 CLFLUSH_Line_Size		: 8,
+			 APIC_ID_Space			: 8,
+			 Initial_APIC_ID		: 8;
 		// ECX
-		uint32_t SSE3			: 1,
-			 PCLMULQDQ		: 1,
-			 DTES64			: 1,
-			 MONITOR		: 1,
-			 DS_CPL			: 1,
-			 VMX			: 1,
-			 SMX			: 1,
-			 EIST			: 1,
-			 TM2			: 1,
-			 SSSE3			: 1,
-			 L1_Context_ID		: 1,			// adaptive mode or shared mode
-			 Debug_Interface	: 1,
-			 FMA			: 1,
-			 CMPXCHG16B		: 1,
-			 XTRP_Update_Control	: 1,
-			 Perf_Capabilities	: 1,
-			 Reserved_3		: 1,
-			 PCID			: 1,
-			 DCA			: 1,
-			 SSE4_1			: 1,
-			 SSE4_2			: 1,
-			 X2APIC			: 1,
-			 MOVBE			: 1,
-			 POPCNT			: 1,
-			 TSC_Deadline		: 1,
-			 AESNI			: 1,
-			 XSAVE			: 1,
-			 OSXSAVE		: 1,
-			 AVX			: 1,
-			 F16C			: 1,
-			 RDRAND			: 1,
-			 Not_Used		: 1;
+		uint32_t SSE3				: 1,
+			 PCLMULQDQ			: 1,
+			 DTES64				: 1,
+			 MONITOR			: 1,
+			 DS_CPL				: 1,
+			 VMX				: 1,
+			 SMX				: 1,
+			 EIST				: 1,
+			 TM2				: 1,
+			 SSSE3				: 1,
+			 L1_Context_ID			: 1,			// adaptive mode or shared mode
+			 Debug_Interface		: 1,
+			 FMA				: 1,
+			 CMPXCHG16B			: 1,
+			 XTRP_Update_Control		: 1,
+			 Perf_Capabilities		: 1,
+			 Reserved_3			: 1,
+			 PCID				: 1,
+			 DCA				: 1,
+			 SSE4_1				: 1,
+			 SSE4_2				: 1,
+			 X2APIC				: 1,
+			 MOVBE				: 1,
+			 POPCNT				: 1,
+			 TSC_Deadline			: 1,
+			 AESNI				: 1,
+			 XSAVE				: 1,
+			 OSXSAVE			: 1,
+			 AVX				: 1,
+			 F16C				: 1,
+			 RDRAND				: 1,
+			 Not_Used			: 1;
 		// EDX
-		uint32_t FPU			: 1,
-			 VME			: 1,
-			 DE			: 1,
-			 PSE			: 1,
-			 TSC			: 1,
-			 MSR			: 1,
-			 PAE			: 1,
-			 MCE			: 1,
-			 CMPXCHG8B		: 1,
-			 APIC			: 1,
-			 Reserved_4		: 1,
-			 SEP			: 1,
-			 MTRR			: 1,
-			 PGE			: 1,
-			 MCA			: 1,
-			 CMOV			: 1,
-			 PAT			: 1,
-			 PSE_36			: 1,
-			 PSN			: 1,
-			 CLFLUSH		: 1,
-			 Reserved_5		: 1,
-			 DS			: 1,
-			 ACPI			: 1,
-			 MMX			: 1,
-			 FXSR			: 1,
-			 SSE			: 1,
-			 SSE2			: 1,
-			 Self_Snoop		: 1,
-			 HTT			: 1,
-			 TM			: 1,
-			 Reserved_6		: 1,
-			 PBE			: 1;
+		uint32_t FPU				: 1,
+			 VME				: 1,
+			 DE				: 1,
+			 PSE				: 1,
+			 TSC				: 1,
+			 MSR				: 1,
+			 PAE				: 1,
+			 MCE				: 1,
+			 CMPXCHG8B			: 1,
+			 APIC				: 1,
+			 Reserved_4			: 1,
+			 SEP				: 1,
+			 MTRR				: 1,
+			 PGE				: 1,
+			 MCA				: 1,
+			 CMOV				: 1,
+			 PAT				: 1,
+			 PSE_36				: 1,
+			 PSN				: 1,
+			 CLFLUSH			: 1,
+			 Reserved_5			: 1,
+			 DS				: 1,
+			 ACPI				: 1,
+			 MMX				: 1,
+			 FXSR				: 1,
+			 SSE				: 1,
+			 SSE2				: 1,
+			 Self_Snoop			: 1,
+			 HTT				: 1,
+			 TM				: 1,
+			 Reserved_6			: 1,
+			 PBE				: 1;
 	} Version_And_Features;
 	struct {
 		// EAX
-		uint32_t Reserved_1		: 8,
-			 Descriptor_1		: 8,
-			 Descriptor_2		: 8,
-			 Descriptor_3		: 8;
+		uint32_t Reserved_1			: 8,
+			 Descriptor_1			: 8,
+			 Descriptor_2			: 8,
+			 Descriptor_3			: 8;
 		// EBX
-		uint32_t Descriptor_4		: 8,
-			 Descriptor_5		: 8,
-			 Descriptor_6		: 8,
-			 Descriptor_7		: 8;
+		uint32_t Descriptor_4			: 8,
+			 Descriptor_5			: 8,
+			 Descriptor_6			: 8,
+			 Descriptor_7			: 8;
 		// ECX
-                uint32_t Descriptor_8           : 8,
-                	 Descriptor_9           : 8,
-                	 Descriptor_10          : 8,
-                	 Descriptor_11          : 8;
+                uint32_t Descriptor_8           	: 8,
+                	 Descriptor_9           	: 8,
+                	 Descriptor_10          	: 8,
+                	 Descriptor_11          	: 8;
 		// EDX
-		uint32_t Descriptor_12          : 8,
-                	 Descriptor_13          : 8,
-                	 Descriptor_14          : 8,
-                	 Descriptor_15          : 8;
+		uint32_t Descriptor_12          	: 8,
+                	 Descriptor_13          	: 8,
+                	 Descriptor_14          	: 8,
+                	 Descriptor_15          	: 8;
 	} TLB_Cache_Prefetch_Information;
+	struct {
+		// EAX
+		uint32_t Reserved_1;
+		// EBX
+		uint32_t Reserved_2;
+		// ECX
+		uint32_t PSN_31_0;						// Available only in Pentium III processor otherwise its reserved
+		// EDX
+		uint32_t PSN_63_32;						// Available only in Pentium III processor otherwise its reserved
+	} Processor_Serial_Number;
+	struct {
+		// EAX
+		uint32_t Cache_Type			: 5,			// 3 = Unified Cache. 4-31 = Reserved.
+			 Cache_Level			: 3,
+			 Self_Initializing_Cache	: 1,
+			 Fully_Assoc			: 1,
+			 Reserved_1			: 4,
+			 Max_LP_Addressable_IDs		: 12,
+			 Max_Cores_Addressable_IDs_Pkg	: 6;
+		// EBX
+		uint32_t Line_Size			: 12,			// Add one to get the return result
+			 Phys_Line_Partitions		: 10,			// Add one to get the return result
+			 Num_Ways			: 10;			// Add one to get the return result
+		// ECX
+		uint32_t Num_Sets;						// Add one to get the return result
+		// EDX
+		uint32_t Not_LWR_Cache_Flush		: 1,
+			 Inclusive_Cache		: 1,
+			 Complex_Cache_Indexing		: 1,
+			 Reserved_2			: 29;
+	} Deterministic_Cache_parameters;
 } CPUID_Decode;
 
 
