@@ -13,9 +13,13 @@ typedef union {
 		uint32_t EDX;
 	} Raw;
 	struct {
+		// EAX
 		uint32_t Max_leaf;
+		// EBX
 		char Vendor_ID_1[4];
+		// ECX
 		char Vendor_ID_2[4];
+		// EDX
 		char Vendor_ID_3[4];
 	} Basic_CPUID_Information;
 	struct {
